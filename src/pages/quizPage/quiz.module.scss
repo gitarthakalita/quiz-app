@@ -62,4 +62,18 @@
 
        
     }
+
+    @media(max-width:460px){
+        .wrapper{
+            width: 80%;
+            height: 70%;
+
+
+            h1{
+                font-size: 2.6rem;
+            }
+        }
+    }
+
 }
+

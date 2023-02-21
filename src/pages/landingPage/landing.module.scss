@@ -1,4 +1,4 @@
-.container{
+.container {
     height: 100vh;
     width: 100%;
 
@@ -6,7 +6,7 @@
 
     place-items: center;
 
-    .wrapper{
+    .wrapper {
 
         width: 80%;
         height: 75%;
@@ -14,24 +14,37 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-between;
 
-        h1{
+
+        h1 {
             font-size: 6rem;
             color: rgb(58, 58, 138);
         }
 
-        button{
+        button {
             width: fit-content;
             padding: 1rem 2rem;
             font-size: 2rem;
-          
+
             background-color: white;
-            color: rgb(94, 103, 154);    
+            color: rgb(94, 103, 154);
             border: solid 0.35rem rgb(106, 189, 140);
             border-radius: 0.5rem;
             font-weight: 600;
 
             cursor: pointer;
+        }
+    }
+
+    @media(max-width:460px) {
+        .wrapper {
+            width: 80%;
+            height: 70%;
+
+            h1 {
+                font-size: 4rem;
+            }
         }
     }
 }
