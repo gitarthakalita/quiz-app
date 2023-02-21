@@ -15,7 +15,7 @@ const OldQuizPage = () => {
   const [score, setScore] = useState(false);
 
   const handleAnswer = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     setSelectedAnswer(e.target.value);
 
@@ -60,30 +60,33 @@ const OldQuizPage = () => {
         score == false ? <section className={styles.container}>
 
           <div className={styles.wrapper}>
-          <h1>{DATA[activeQuestion].question}</h1>
+            <h1>{DATA[activeQuestion].question}</h1>
 
-<form >
+            <form >
 
-  <div><input type="radio" name="question_option" value="optionA" onChange={handleAnswer} /><label>{optionA}</label> </div>
-  <div><input type="radio" name="question_option" value="optionB" onChange={handleAnswer} /><label>{optionB}</label> </div>
-  <div><input type="radio" name="question_option" value="optionC" onChange={handleAnswer} /><label>{optionC}</label> </div>
-  <div><input type="radio" name="question_option" value="optionD" onChange={handleAnswer} /><label>{optionD}</label> </div>
+              <div><input type="radio" name="question_option" value="optionA" defaultChecked={false} onChange={handleAnswer} /><label>{optionA}</label> </div>
+              <div><input type="radio" name="question_option" value="optionB" defaultChecked={false} onChange={handleAnswer} /><label>{optionB}</label> </div>
+              <div><input type="radio" name="question_option" value="optionC" defaultChecked={false} onChange={handleAnswer} /><label>{optionC}</label> </div>
+              <div><input type="radio" name="question_option" value="optionD" defaultChecked={false} onChange={handleAnswer} /><label>{optionD}</label> </div>
 
-</form>
+            </form>
 
-{/* <h2>Result: {result}</h2> */}
+            {/* <h2>Result: {result}</h2> */}
 
-{
-  activeQuestion !== DATA.length - 1 ? <button onClick={nextQuestion} >Next Question</button> : <button onClick={submitResult}>Submit</button>
-}
+            {
+              activeQuestion !== DATA.length - 1 ? <button onClick={nextQuestion} >Next Question</button> : <button onClick={submitResult}>Submit</button>
+            }
           </div>
 
         </section> : <section className={styles.container}>
+        
+          <div className={styles.wrapper}>
           <h1>Score is {result}</h1>
 
-          <Link to="/">
-          <button>Back to Home</button>
-        </Link>
+<Link to="/">
+  <button>Back to Home</button>
+</Link>
+          </div>
         </section>
       }
 
