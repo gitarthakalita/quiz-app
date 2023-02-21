@@ -8,10 +8,41 @@
 
     .wrapper{
 
-        width: 80%;
-        height: 75%;
+        width: 60%;
+        height: 50%;
 
         display: flex;
+
+        flex-direction: column;
+        justify-content: space-between;
+
+
+        h1{
+            font-size: 3.2rem;
+            color: rgb(61, 68, 107);
+
+        }
+
+       form{
+        div{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+
+            input{
+                cursor: pointer;
+            }
+            label{
+                font-size: 1.8rem;
+            }
+        }
+       }
+
+        button{
+            width: fit-content;
+            padding: 1rem 2rem;
+            font-size: 2rem;
+        }
         
 
        
