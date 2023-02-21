@@ -33,8 +33,10 @@
             gap: 1rem;
             align-items: center;
 
-            input{
+            input[type=radio]{
                 cursor: pointer;
+                width: 1.25em;
+                height: 1.25em;
             }
             label{
                 font-size: 2rem;
@@ -46,6 +48,15 @@
             width: fit-content;
             padding: 1rem 2rem;
             font-size: 2rem;
+
+            background-color: white;
+            color: rgb(94, 103, 154);    
+            border: solid 0.35rem rgb(106, 189, 140);
+            border-radius: 0.5rem;
+            font-weight: 600;
+
+            cursor: pointer;
+
         }
         
 
