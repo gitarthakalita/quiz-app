@@ -19,7 +19,11 @@
 
         h1{
             font-size: 3.2rem;
-            color: rgb(61, 68, 107);
+            color: rgb(94, 103, 154);
+
+            span{
+                color: rgb(106, 189, 140);
+            }
 
         }
 
@@ -33,7 +37,7 @@
                 cursor: pointer;
             }
             label{
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
         }
        }

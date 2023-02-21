@@ -48,7 +48,7 @@ const OldQuizPage = () => {
 
 
 
-  const { optionA, optionB, optionC, optionD, correctAnswer } = DATA[activeQuestion]
+  const { optionA, optionB, optionC, optionD, correctAnswer, question, id } = DATA[activeQuestion]
 
 
 
@@ -60,7 +60,7 @@ const OldQuizPage = () => {
         score == false ? <section className={styles.container}>
 
           <div className={styles.wrapper}>
-            <h1>{DATA[activeQuestion].question}</h1>
+            <h1><span>Question No {id} | </span> {question}</h1>
 
             <form >
 
@@ -81,7 +81,7 @@ const OldQuizPage = () => {
         </section> : <section className={styles.container}>
         
           <div className={styles.wrapper}>
-          <h1>Score is {result}</h1>
+          <h1>Score is {result} out of {DATA.length}</h1>
 
 <Link to="/">
   <button>Back to Home</button>
