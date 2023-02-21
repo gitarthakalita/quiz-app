@@ -1,0 +1,52 @@
+[
+    {
+        "id": "1",
+        "question": "How many states are there in Notheast India",
+        "optionA":"2",
+        "optionB":"4",
+        "optionC":"8",
+        "optionD":"7",
+        "correctAnswer": "optionC"
+
+    },
+    {
+        "id": "2",
+        "question": "Which is the world's largest desert? ",
+        "optionA":"Thar",
+        "optionB":"Sahara",
+        "optionC":"Kalahari",
+        "optionD":"Sonoran",
+        "correctAnswer": "optionB"
+
+    },
+    {
+        "id": "3",
+        "question": "When did India got it's independence?",
+        "optionA":"1950",
+        "optionB":"1949",
+        "optionC":"1947",
+        "optionD":"1948",
+        "correctAnswer": "optionC"
+
+    },
+    {
+        "id": "4",
+        "question": "How many continent are there in the world?",
+        "optionA":"5",
+        "optionB":"6",
+        "optionC":"8",
+        "optionD":"7",
+        "correctAnswer": "optionD"
+
+    },{
+        "id": "5",
+        "question": "How many states of matter are there?",
+        "optionA":"5",
+        "optionB":"4",
+        "optionC":"3",
+        "optionD":"7",
+        "correctAnswer": "optionA"
+
+    }
+    
+]
