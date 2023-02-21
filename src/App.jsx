@@ -6,6 +6,8 @@ import {
   RouterProvider
 } from 'react-router-dom';
 import QuizPage from './pages/quizPage';
+import OldQuizPage from './pages/quizPage/old_index';
+import ScorePage from './pages/scorePage';
 
 
 const router = createBrowserRouter([
@@ -16,6 +18,14 @@ const router = createBrowserRouter([
   {
     path: "/quiz",
     element: <QuizPage/>
+  },
+  {
+    path: "/quiz_old",
+    element: <OldQuizPage/>
+  },
+  {
+    path: "/score",
+    element: <ScorePage/>
   }
 ])
 

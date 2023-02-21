@@ -10,7 +10,7 @@ const LandingPage = () => {
         <h1>React Quiz App</h1>
 
 
-        <Link to="/quiz">
+        <Link to="/quiz_old">
           <button>Start Quiz</button>
         </Link>
       </div>
