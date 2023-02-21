@@ -47,6 +47,33 @@
         "optionD":"7",
         "correctAnswer": "optionA"
 
+    },{
+        "id": "6",
+        "question": "Which of the following framework is based on MVC architecture?",
+        "optionA":"React",
+        "optionB":"Vue",
+        "optionC":"Angular",
+        "optionD":"Svelte",
+        "correctAnswer": "optionC"
+
+    },{
+        "id": "7",
+        "question": "Which of the following is a functional programming language?",
+        "optionA":"Golang",
+        "optionB":"Rust",
+        "optionC":"Java",
+        "optionD":"Elixir",
+        "correctAnswer": "optionD"
+
+    },{
+        "id": "8",
+        "question": "Which one of the following is Saturn's mooon?",
+        "optionA":"Titan",
+        "optionB":"Ganymede",
+        "optionC":"Phobos",
+        "optionD":"Titania",
+        "correctAnswer": "optionA"
+
     }
     
 ]
