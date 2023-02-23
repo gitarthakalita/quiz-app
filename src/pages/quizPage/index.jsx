@@ -4,33 +4,59 @@ import styles from './quiz.module.scss';
 
 import DATA from '../../data/questions.json'
 import { Link } from 'react-router-dom';
+import QuestionBox from '../../components/question-box/QuestionBox';
 
 const QuizPage = () => {
 
   const [activeQuestion, setActiveQuestion] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState('');
+  const [selectedAnswer, setSelectedAnswer] = useState();
 
   const [result, setResult] = useState(0);
 
   const [score, setScore] = useState(false);
 
-  const handleAnswer = (e) => {
-    // e.preventDefault();
 
-    setSelectedAnswer(e.target.value);
+  const handleAnswer = (data) => {
 
+    console.log("Running handleAnswer");
+
+    console.log("Before setSelectAnswer", selectedAnswer);
+
+    console.log("data from child", data);
+    // if (data == null) {
+    if (data == "optionA" || data == "optionB" ||data == "optionC" ||data == "optionD" ) {
+
+    console.log("data from child inside If statement", data);
+
+
+      setSelectedAnswer(data);
+      console.log("After setSelectAnswer", data, selectedAnswer);
+
+    }
+
+    
   }
 
+
   const nextQuestion = () => {
+
+    console.log("Running Next Question");
     setActiveQuestion(activeQuestion + 1)
 
     if (selectedAnswer == correctAnswer) {
       setResult(result + 1)
+      // setSelectedAnswer(null)
     }
 
-    console.log(selectedAnswer, result);
+    clearState();
 
   }
+
+  const clearState = () => {
+    setSelectedAnswer()
+    console.log("Running clearState");
+  }
+
 
 
   const submitResult = () => {
@@ -38,19 +64,17 @@ const QuizPage = () => {
       setResult(result + 1)
     }
 
-    console.log(selectedAnswer, result);
-
-
     setScore(true)
-
 
   }
 
+  useEffect(() => {
+    // setSelectedAnswer(null)
+    console.log("Parent useEffect running");
+  },[])
 
 
-  const { optionA, optionB, optionC, optionD, correctAnswer, question, id } = DATA[activeQuestion]
-
-
+  const { correctAnswer } = DATA[activeQuestion]
 
 
   return (
@@ -60,18 +84,15 @@ const QuizPage = () => {
         score == false ? <section className={styles.container}>
 
           <div className={styles.wrapper}>
-            <h1><span>Question No {id} | </span> {question}</h1>
 
-            <form >
+            <QuestionBox
 
-              <div><input type="radio" name="question_option" value="optionA" defaultChecked={false} onChange={handleAnswer} /><label>{optionA}</label> </div>
-              <div><input type="radio" name="question_option" value="optionB" defaultChecked={false} onChange={handleAnswer} /><label>{optionB}</label> </div>
-              <div><input type="radio" name="question_option" value="optionC" defaultChecked={false} onChange={handleAnswer} /><label>{optionC}</label> </div>
-              <div><input type="radio" name="question_option" value="optionD" defaultChecked={false} onChange={handleAnswer} /><label>{optionD}</label> </div>
+              data={DATA[activeQuestion]}
+              handleFunc={handleAnswer}
+              nextFunc={nextQuestion}
+              clearFunc={clearState}
+            />
 
-            </form>
-
-            {/* <h2>Result: {result}</h2> */}
 
             {
               activeQuestion !== DATA.length - 1 ? <button onClick={nextQuestion} >Next Question</button> : <button onClick={submitResult}>Submit</button>
@@ -79,13 +100,13 @@ const QuizPage = () => {
           </div>
 
         </section> : <section className={styles.container}>
-        
-          <div className={styles.wrapper}>
-          <h1>Score is {result} out of {DATA.length}</h1>
 
-<Link to="/">
-  <button>Back to Home</button>
-</Link>
+          <div className={styles.wrapper}>
+            <h1>Score is {result} out of {DATA.length}</h1>
+
+            <Link to="/">
+              <button>Back to Home</button>
+            </Link>
           </div>
         </section>
       }
